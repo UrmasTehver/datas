@@ -13,34 +13,34 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-half is-offset-one-quarter">
-                    <div class="card">
-                        <div class="card-content">
-                          <div class="content">                      
-                            <h1>Kõik kirjed</h1>
-                                <table class="table table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th>Firstname</th>
-                                            <th>Lastname</th>
-                                            <th>Email</th>
-                                            <th>Birthdate</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <% for(let a of arr) {%>
-                                            <tr>
-                                                <td> <%= a.firstname  %> </td>
-                                                <td> <%= a.lastname %> </td>
-                                                <td> <%= a.email %> </td>
-                                                <td> <%= a.birthdate %> </td>
-                                            </tr>
-                                        <% } %> 
-                                    </tbody>
-                                </table>    
-                          </div>
-                        </div>
-                      </div>
+                <div class="column is-offset-one-quarter">
+                <h1><strong> Kõik kirjed </strong></h1><br>
+                    <table class="table table-bordered table-hover">
+                            <thead>
+                               <tr>
+                                  <th>Firstname</th>
+                                  <th>Lastname</th>
+                                  <th>Name</th>
+                                  <th>Birthdate</th>
+                                  <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(let a of arr) {%>
+                                    <tr>
+                                        <td> <%= a.firstname  %> </td>
+                                        <td> <%= a.lastname %> </td>
+                                        <td> <%= myfuncs.joinNames(a.firstname, a.lastname) %> </td>
+                                        <% if (myfuncs.isToday(a.birthdate)) { %>
+                                            <td style="color:red"> <%= myfuncs.convertDate(a.birthdate) %> </td>
+                                        <% } else { %>
+                                            <td> <%= myfuncs.convertDate(a.birthdate) %> </td>
+                                        <% } %>
+                                        <td> <%= a.email.toLowerCase() %> </td>
+                                    </tr>
+                                <% } %> 
+                            </tbody>
+                        </table>    
                 </div>
             </div>
         </div>
