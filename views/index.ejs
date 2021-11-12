@@ -31,8 +31,8 @@
                                         <td> <%= a.firstname  %> </td>
                                         <td> <%= a.lastname %> </td>
                                         <td> <%= myfuncs.joinNames(a.firstname, a.lastname) %> </td>
-                                        <% if (myfuncs.isToday(a.birthdate)) { %>
-                                            <td style="color:red"> <%= myfuncs.convertDate(a.birthdate) %> </td>
+                                        <% if (myfuncs.isBirthday(a.birthdate)) { %>
+                                            <td><strong style="color:red"> <%= myfuncs.convertDate(a.birthdate) %> </strong></td>
                                         <% } else { %>
                                             <td> <%= myfuncs.convertDate(a.birthdate) %> </td>
                                         <% } %>

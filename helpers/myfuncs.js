@@ -11,13 +11,13 @@ function joinNames(firstname, lastname) {
 }
 
 
-/** Tuvastab, kas kuupäev (aastat arvestamata) on tänane */
-function isToday(date) {
+/** Tuvastab, kas täna on sünnipäev */
+function isBirthday(date) {
     let today =  new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth()+1;
+    let day = today.getDate();
+    let month = today.getMonth()+1;
     let parts = date.split('-');
-    if (dd == parts[2] && mm == parts[1]) {
+    if (day == parts[2] && month == parts[1]) {
         return true;
     } else {
         return false;
@@ -29,5 +29,5 @@ function isToday(date) {
 module.exports = {
     convertDate: convertDate,
     joinNames: joinNames,
-    isToday: isToday
+    isBirthday: isBirthday
 }
