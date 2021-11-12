@@ -18,13 +18,26 @@
                         <div class="card-content">
                           <div class="content">                      
                             <h1>Kõik kirjed</h1>
-                            <ul>
-                                <% for(let a of arr) {%>
-                                    <li>
-                                        Name: <%= a.firstname  %> <%= a.lastname %> <br> e-mail: <%= a.email %> <br> Birthdate: <%= a.birthdate %>
-                                    </li>
-                                <% } %> 
-                            </ul>
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+                                            <th>Email</th>
+                                            <th>Birthdate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for(let a of arr) {%>
+                                            <tr>
+                                                <td> <%= a.firstname  %> </td>
+                                                <td> <%= a.lastname %> </td>
+                                                <td> <%= a.email %> </td>
+                                                <td> <%= a.birthdate %> </td>
+                                            </tr>
+                                        <% } %> 
+                                    </tbody>
+                                </table>    
                           </div>
                         </div>
                       </div>
